@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LoginHeader from './header/LoginHeader'
 import LoginFooter from './footer/LoginFooter'
+import { useNavigate } from 'react-router-dom';
 
-const Login = ({ authLogin }) => {
+const Login = ({ authService }) => {
+  const navigate = useNavigate();
+
+  const goHome = (userId) => {
+    navigate('/', {
+      state: { id: userId }
+    });
+  };
+
   const onLogin = (event) => {
-    authLogin
+    authService
       .login(event.currentTarget.textContent)
-      .then(console.log);
+      .then(response => goHome(response.user.uid));
   }
+
+  useEffect(() => {
+    authService
+      .onAuthChange(user => {
+        user && goHome(user.uid);
+    });
+  })
 
   return ( 
     <section>

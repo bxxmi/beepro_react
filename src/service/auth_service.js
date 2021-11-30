@@ -1,6 +1,6 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
 
-class AuthLogin {
+class AuthService {
   constructor() {
     this.auth = getAuth();
     this.googleProvider = new GoogleAuthProvider();
@@ -24,8 +24,14 @@ class AuthLogin {
   }
 
   logout() {
-    this.firebase.signOut();
+    this.auth.signOut();
+  }
+
+  onAuthChange(onUserChanged) {
+    this.auth.onAuthStateChanged(user => {
+      onUserChanged(user);
+    });
   }
 }
 
-export default AuthLogin;
+export default AuthService;
