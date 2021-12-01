@@ -26,6 +26,8 @@ const Navigation = ({ authService }) => {
     });
   });
 
+  console.log(nameRef.current);
+
   return (
     <div className={styles.navbar}>
       <div className={styles.logo}>
