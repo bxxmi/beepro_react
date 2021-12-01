@@ -1,25 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
-import { useEffect } from 'react/cjs/react.development';
+import Navigation from './nav/Navigation';
+import CardList from './card/CardList';
+import styles from './home.module.css';
 
 const Home = ({ authService }) => {
-  const navigate = useNavigate();
-
-  const onLogout = () => {
-    authService.logout();
-  }
-
-  useEffect(() => {
-    authService.onAuthChange(user => {
-      if (!user) {
-        navigate('/login');
-      }
-    })
-  })
+  const userName = authService.auth.currentUser.displayName;
+  const userImageSrc = authService.auth.currentUser.photoURL;
 
   return (
-    <div>
-      <button onClick={onLogout}>Logout</button>
+    <div className={styles.container}>
+      <Navigation 
+        authService={authService}
+        userName={userName}
+        userImage={userImageSrc}
+      />
+      <CardList />
     </div>
   );
 };
