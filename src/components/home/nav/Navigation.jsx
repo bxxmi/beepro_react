@@ -1,18 +1,27 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router';
-import styles from './navigation.module.css';
+import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router";
+import styles from "./navigation.module.css";
 
-const Navigation = ({ authService, userName, userImage }) => {
+const Navigation = ({ authService }) => {
+  let [userName, setUserName] = useState("");
+  let [userImage, setUserImage] = useState("");
+
+  const nameRef = useRef();
+  const imgRef = useRef();
+
   const navigate = useNavigate();
 
   const onLogout = () => {
     authService.logout();
-  }
+  };
 
   useEffect(() => {
-    authService.onAuthChange(user => {
+    authService.onAuthChange((user) => {
       if (!user) {
-        navigate('/login');
+        navigate("/login");
+      } else {
+        setUserName(user.displayName);
+        setUserImage(user.photoURL);
       }
     });
   });
@@ -23,12 +32,10 @@ const Navigation = ({ authService, userName, userImage }) => {
         <h1>Beepro</h1>
       </div>
       <div className={styles.userinfo}>
-        <p>반갑습니다. {userName}님</p>
-        <img src={userImage} alt="profile" />
+        <p ref={nameRef}>반갑습니다. {userName}님</p>
+        <img src={userImage} alt="profile" ref={imgRef} />
       </div>
-      <div className={styles.menu}>
-        card
-      </div>
+      <div className={styles.menu}>카드만들기</div>
       <button onClick={onLogout}>Logout</button>
     </div>
   );

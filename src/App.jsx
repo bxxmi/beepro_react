@@ -1,8 +1,6 @@
-import Login from './components/login/Login'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/home/Home'
-
-export const session = sessionStorage.getItem('userInfo');
+import Login from "./components/login/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/home/Home";
 
 function App({ authService }) {
   return (

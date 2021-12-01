@@ -1,4 +1,9 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+} from "firebase/auth";
 
 class AuthService {
   constructor() {
@@ -9,9 +14,9 @@ class AuthService {
 
   getServiceProvider(providerName) {
     switch (providerName) {
-      case 'Google':
+      case "Google":
         return this.googleProvider;
-      case 'Github':
+      case "Github":
         return this.githubProvider;
       default:
         console.log(`${providerName}는 로그인 서비스를 제공하지 않습니다.`);
@@ -28,7 +33,7 @@ class AuthService {
   }
 
   onAuthChange(onUserChanged) {
-    this.auth.onAuthStateChanged(user => {
+    this.auth.onAuthStateChanged((user) => {
       onUserChanged(user);
     });
   }
