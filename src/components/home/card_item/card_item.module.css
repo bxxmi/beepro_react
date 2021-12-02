@@ -1,4 +1,35 @@
 .card {
+  width: 550px;
+  height: 220px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.card .photo {
+  border: 1px solid red;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.card .photo > img {
+  width: 90px;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.card .info {
+  border: 1px solid red;
+  width: 100%;
+}
+
+.card .info > h2 {
+  border: 1px solid red;
+  margin-bottom: 10px;
 }
 
 /* theme colors */

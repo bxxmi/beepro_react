@@ -19,12 +19,16 @@ const CardItem = ({ card }) => {
 
   return (
     <li className={`${styles.card} ${pickColor(cardTheme)}`}>
-      <img src={url} alt="profile image" />
-      <h1>{projectName}</h1>
-      <p>{projectRole}</p>
-      <p>{description}</p>
-      <p>{startDate}</p>
-      <p>{dueDate}</p>
+      <div className={styles.photo}>
+        <img src={url} alt="profile image" />
+      </div>
+      <div className={styles.info}>
+        <h2>{projectName}</h2>
+        <p className={styles.role}>{projectRole}</p>
+        <p className={styles.description}>{description}</p>
+        <p className={styles.startDate}>{startDate}</p>
+        <p className={styles.dueDate}>{dueDate}</p>
+      </div>
     </li>
   );
 };
