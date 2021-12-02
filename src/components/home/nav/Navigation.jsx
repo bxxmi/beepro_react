@@ -39,13 +39,13 @@ const Navigation = ({ authService }) => {
         <img src={user.image} alt="profile" />
       </div>
       <div className={styles.menu}>
-        <div class={styles.menu_title}>
-          <i class="fas fa-plus-circle"></i>
+        <div className={styles.menu_title}>
+          <i className="fas fa-plus-circle"></i>
           <p>프로젝트 카드</p>
         </div>
       </div>
       <button onClick={onLogout}>
-        <i class="fas fa-sign-out-alt"></i>
+        <i className="fas fa-sign-out-alt"></i>
         Logout
       </button>
     </div>

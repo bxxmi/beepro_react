@@ -1,0 +1,27 @@
+.card {
+}
+
+/* theme colors */
+.red {
+  background-color: #fa897b;
+}
+
+.yellow {
+  background-color: #fac87c;
+}
+
+.green {
+  background-color: #deeb8d;
+}
+
+.blue {
+  background-color: #7caefa;
+}
+
+.purple {
+  background-color: #b399ed;
+}
+
+.basic {
+  background-color: #eeeeee;
+}
