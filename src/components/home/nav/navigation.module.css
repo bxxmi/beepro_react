@@ -1,5 +1,69 @@
 .navbar {
-  border: 1px solid red;
-  width: 250px;
+  width: 300px;
   height: 100vh;
+  background-color: #fefdfa;
+}
+
+.logo {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 100px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ededed;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.userinfo p {
+  letter-spacing: 0.6px;
+  margin-bottom: 20px;
+}
+
+.userinfo p > span {
+  font-weight: 700;
+}
+
+.userinfo > img {
+  border: 3px solid #eaeaea;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 195px;
+}
+
+.menu .menu_title {
+  font-size: 20px;
+  height: 60px;
+  line-height: 60px;
+  display: flex;
+  flex-direction: row;
+  background-color: #fdeed7;
+  border-right: 7px solid #fac87c;
+}
+
+.menu .menu_title > i {
+  color: #fac87c;
+  margin: 0 40px;
+  line-height: 60px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+button > i {
+  margin-right: 5px;
 }
