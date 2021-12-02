@@ -13,33 +13,27 @@ const Home = ({ authService }) => {
       description: "프로젝트입니다",
       startDate: "2021-11-11",
       dueDate: "2021-12-12",
-      cardTheme: "red",
+      color: "red",
       fileName: "bomi",
       fileURL: "bomi.png",
     },
     {
       projectId: "2",
-      projectName: "pickurcolor",
-      projectRole: "Front End Developer",
-      description: "프로젝트입니다",
-      startDate: "2021-11-11",
-      dueDate: "2021-12-12",
-      cardTheme: "yellow",
-      fileName: "bomi",
-      fileURL: null,
-    },
-    {
-      projectId: "3",
       projectName: "slowcampus",
       projectRole: "Front End Developer",
       description: "프로젝트입니다",
       startDate: "2021-11-11",
       dueDate: "2021-12-12",
-      cardTheme: "purple",
+      color: "purple",
       fileName: "bomi",
       fileURL: null,
     },
   ]);
+
+  const addCard = (content) => {
+    const updated = [...card, content];
+    setCard(updated);
+  };
 
   return (
     <div className={styles.container}>
@@ -47,7 +41,7 @@ const Home = ({ authService }) => {
         <Navigation authService={authService} />
       </div>
       <div className={styles.card_area}>
-        <CardForm card={card} />
+        <CardForm onAdd={addCard} />
         <CardList card={card} />
       </div>
     </div>

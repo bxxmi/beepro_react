@@ -10,7 +10,7 @@ const CardItem = ({ card }) => {
     description,
     startDate,
     dueDate,
-    cardTheme,
+    color,
     fileName,
     fileURL,
   } = card;
@@ -18,23 +18,25 @@ const CardItem = ({ card }) => {
   const url = fileURL || DEFAULT_IMAGE;
 
   return (
-    <li className={`${styles.card} ${pickColor(cardTheme)}`}>
-      <div className={styles.photo}>
-        <img src={url} alt="profile image" />
-      </div>
-      <div className={styles.info}>
-        <h2>{projectName}</h2>
-        <p className={styles.role}>{projectRole}</p>
-        <p className={styles.description}>{description}</p>
-        <p className={styles.startDate}>{startDate}</p>
-        <p className={styles.dueDate}>{dueDate}</p>
-      </div>
-    </li>
+    <ul>
+      <li className={`${styles.card} ${pickColor(color)}`}>
+        <div className={styles.photo}>
+          <img src={url} alt="profile image" />
+        </div>
+        <div className={styles.info}>
+          <h2>{projectName}</h2>
+          <p className={styles.role}>{projectRole}</p>
+          <p className={styles.description}>{description}</p>
+          <p className={styles.startDate}>{startDate}</p>
+          <p className={styles.dueDate}>{dueDate}</p>
+        </div>
+      </li>
+    </ul>
   );
 };
 
-function pickColor(cardTheme) {
-  switch (cardTheme) {
+function pickColor(color) {
+  switch (color) {
     case "red":
       return styles.red;
     case "yellow":

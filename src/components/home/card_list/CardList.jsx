@@ -7,11 +7,7 @@ const CardList = ({ card }) => {
     <div className={styles.cards}>
       {card ? (
         card.map((card) => {
-          return (
-            <ul>
-              <CardItem card={card} key={card.projectId} />
-            </ul>
-          );
+          return <CardItem card={card} key={card.projectId} />;
         })
       ) : (
         <>
