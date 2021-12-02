@@ -35,6 +35,10 @@ const Home = ({ authService }) => {
     setCard(updated);
   };
 
+  const deleteCard = () => {
+    console.log("delete");
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.nav_area}>
@@ -42,7 +46,7 @@ const Home = ({ authService }) => {
       </div>
       <div className={styles.card_area}>
         <CardForm onAdd={addCard} />
-        <CardList card={card} />
+        <CardList card={card} onDelete={deleteCard} />
       </div>
     </div>
   );

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./card_item.module.css";
+import Buttons from "../button/Buttons";
 
 const DEFAULT_IMAGE = "/ghost-icon.jpg";
 
-const CardItem = ({ card }) => {
+const CardItem = ({ card, onDelete }) => {
+  const cardRef = useRef();
+
   const {
+    projectId,
     projectName,
     projectRole,
     description,
@@ -19,7 +23,7 @@ const CardItem = ({ card }) => {
 
   return (
     <ul>
-      <li className={`${styles.card} ${pickColor(color)}`}>
+      <li ref={cardRef} className={`${styles.card} ${pickColor(color)}`}>
         <div className={styles.photo}>
           <img src={url} alt="profile image" />
         </div>
@@ -30,6 +34,7 @@ const CardItem = ({ card }) => {
           <p className={styles.startDate}>{startDate}</p>
           <p className={styles.dueDate}>{dueDate}</p>
         </div>
+        <Buttons card={card} onDelete={onDelete} />
       </li>
     </ul>
   );

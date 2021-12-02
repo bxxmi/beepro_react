@@ -2,12 +2,14 @@ import React from "react";
 import CardItem from "../card_item/CardItem";
 import styles from "./card_list.module.css";
 
-const CardList = ({ card }) => {
+const CardList = ({ card, onDelete }) => {
   return (
     <div className={styles.cards}>
       {card ? (
         card.map((card) => {
-          return <CardItem card={card} key={card.projectId} />;
+          return (
+            <CardItem card={card} key={card.projectId} onDelete={onDelete} />
+          );
         })
       ) : (
         <>

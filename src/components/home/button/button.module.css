@@ -1,0 +1,8 @@
+.buttons {
+  border: 1px solid red;
+  font-size: 18px;
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
