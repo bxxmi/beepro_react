@@ -2,6 +2,9 @@
   font-size: 36px;
   display: flex;
   color: #f9c87c;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .form_show {
@@ -12,6 +15,7 @@
   top: 60px;
   backdrop-filter: blur(4px);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 
 .form_show input {

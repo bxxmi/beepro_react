@@ -29,13 +29,29 @@ const CardItem = ({ card, onDelete }) => {
           <img src={url} alt="profile image" />
         </div>
         <div className={styles.info}>
-          <h2>{projectName}</h2>
-          <p className={styles.role}>{projectRole}</p>
-          <p className={styles.description}>{description}</p>
-          <p className={styles.startDate}>{startDate}</p>
-          <p className={styles.dueDate}>{dueDate}</p>
-          <EditButton />
-          <DeleteButton id={projectId} onDelete={onDelete} />
+          <div className={styles.info_title}>
+            <h2>{projectName}</h2>
+          </div>
+          <div className={styles.info_role}>
+            <span>역할</span>
+            {projectRole}
+          </div>
+          <div className={styles.info_description}>
+            <span>프로젝트 상세</span>
+            {description}
+          </div>
+          <div className={styles.info_startDate}>
+            <span>시작일</span>
+            {startDate}
+          </div>
+          <div className={styles.info_dueDate}>
+            <span>마감일</span>
+            {dueDate}
+          </div>
+          <div className={styles.info_buttons}>
+            <EditButton />
+            <DeleteButton id={projectId} onDelete={onDelete} />
+          </div>
         </div>
       </li>
     </ul>

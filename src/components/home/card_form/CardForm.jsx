@@ -33,6 +33,7 @@ const CardForm = ({ onAdd }) => {
     };
 
     formRef.current.reset();
+    showHideForm();
     onAdd(card);
   };
 

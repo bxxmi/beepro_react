@@ -13,6 +13,7 @@
   flex-direction: column;
   width: 100%;
   padding: 12px;
+  background-color: #fefcf9;
 }
 
 .card_area .card_form {

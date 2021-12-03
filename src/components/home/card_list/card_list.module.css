@@ -32,11 +32,14 @@
   margin-bottom: 10px;
 }
 
+/* Card List */
 .cards {
-  border: 2px solid #ececec;
-  border-radius: 10px;
+  width: 550px;
+  margin: 0 auto 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
 }
