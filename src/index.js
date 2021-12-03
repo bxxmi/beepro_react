@@ -2,12 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import AuthService from "./service/auth_service";
-import app from "./service/firebase";
+import CardData from "./service/card_data";
+import firebaseApp from "./service/firebase";
 
-const authService = new AuthService(app);
+const authService = new AuthService(firebaseApp);
+const cardData = new CardData(firebaseApp);
 ReactDOM.render(
   <React.StrictMode>
-    <App authService={authService} />
+    <App authService={authService} cardData={cardData} />
   </React.StrictMode>,
   document.getElementById("root")
 );

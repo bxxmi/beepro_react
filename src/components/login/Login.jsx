@@ -6,16 +6,16 @@ import { useNavigate } from "react-router-dom";
 const Login = ({ authService }) => {
   const navigate = useNavigate();
 
-  const goHome = (userInfo) => {
-    navigate("/", {
-      state: userInfo,
-    });
-  };
-
   const onLogin = (event) => {
     authService
       .login(event.currentTarget.textContent)
       .then((response) => goHome(JSON.stringify(response)));
+  };
+
+  const goHome = (userInfo) => {
+    navigate("/", {
+      state: userInfo,
+    });
   };
 
   useEffect(() => {

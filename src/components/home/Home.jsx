@@ -3,39 +3,22 @@ import Navigation from "./nav/Navigation";
 import CardForm from "./card_form/CardForm";
 import CardList from "./card_list/CardList";
 import styles from "./home.module.css";
+import { useLocation } from "react-router";
 
-const Home = ({ authService }) => {
-  const [card, setCard] = useState([
-    {
-      projectId: "1",
-      projectName: "beepro",
-      projectRole: "Front End Developer",
-      description: "프로젝트입니다",
-      startDate: "2021-11-11",
-      dueDate: "2021-12-12",
-      color: "red",
-      fileName: "bomi",
-      fileURL: "bomi.png",
-    },
-    {
-      projectId: "2",
-      projectName: "slowcampus",
-      projectRole: "Front End Developer",
-      description: "프로젝트입니다",
-      startDate: "2021-11-11",
-      dueDate: "2021-12-12",
-      color: "purple",
-      fileName: "bomi",
-      fileURL: null,
-    },
-  ]);
+const Home = ({ authService, cardData }) => {
+  const locationState = JSON.parse(useLocation().state).user.uid;
+  console.log(locationState);
+  const [card, setCard] = useState([]);
+  const [userId, setUserId] = useState(locationState);
 
   const addCard = (content) => {
     const updated = [...card, content];
     setCard(updated);
+    cardData.saveCard(userId, content);
   };
 
   const deleteCard = (id) => {
+    console.log(id);
     const cards = card.filter((item) => item.projectId !== id);
     setCard(cards);
   };

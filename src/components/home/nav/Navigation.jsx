@@ -4,6 +4,7 @@ import styles from "./navigation.module.css";
 
 const Navigation = ({ authService }) => {
   const [user, setUser] = useState({
+    id: "",
     name: "",
     image: "",
   });
@@ -20,6 +21,7 @@ const Navigation = ({ authService }) => {
         navigate("/login");
       } else {
         setUser({
+          id: user.uid,
           name: user.displayName,
           image: user.photoURL,
         });
