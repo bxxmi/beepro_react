@@ -21,6 +21,7 @@ const Home = ({ authService, cardData }) => {
     console.log(id);
     const cards = card.filter((item) => item.projectId !== id);
     setCard(cards);
+    cardData.removeCard(userId, id);
   };
 
   return (
