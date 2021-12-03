@@ -6,10 +6,10 @@ const CardList = ({ card, onDelete }) => {
   return (
     <div className={styles.cards}>
       {card ? (
-        card.map((card) => {
+        Object.keys(card).map((key) => {
           return (
-            <div key={card.projectId}>
-              <CardItem card={card} onDelete={onDelete} />
+            <div key={key}>
+              <CardItem card={card[key]} onDelete={onDelete} />
             </div>
           );
         })
