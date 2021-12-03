@@ -6,7 +6,6 @@ class CardData {
   }
 
   syncCards(userId, updateCard) {
-    console.log(userId, updateCard);
     const query = ref(this.data, `${userId}/cards`);
     onValue(query, (DataSnapshot) => {
       const value = DataSnapshot.val();

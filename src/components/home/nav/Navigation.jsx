@@ -27,7 +27,7 @@ const Navigation = ({ authService }) => {
         });
       }
     });
-  }, [authService, navigate]);
+  }, [user]);
 
   return (
     <div className={styles.navbar}>

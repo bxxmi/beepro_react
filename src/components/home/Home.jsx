@@ -7,13 +7,7 @@ import { useLocation } from "react-router";
 
 const Home = ({ authService, cardData }) => {
   const locationState = JSON.parse(useLocation().state).user.uid;
-  const [card, setCard] = useState({
-    1: {
-      projectId: "",
-      projectName: "",
-      projectRole: "",
-    },
-  });
+  const [card, setCard] = useState({});
   const [userId, setUserId] = useState(locationState);
 
   const addCard = (content) => {
@@ -24,15 +18,10 @@ const Home = ({ authService, cardData }) => {
   };
 
   const deleteCard = (id) => {
-    // console.log(id);
     const updated = { ...card };
     delete updated[id];
     setCard(updated);
     cardData.deleteCard(userId, id);
-    // console.log(id);
-    // const cards = card.filter((item) => item.projectId !== id);
-    // setCard(cards);
-    // cardData.deleteCard(userId, id);
   };
 
   useEffect(() => {

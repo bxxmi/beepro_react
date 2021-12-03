@@ -1,3 +1,37 @@
+.no_cards {
+  width: 100%;
+}
+
+.notice {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice > i {
+  color: #cbc1b1;
+  font-size: 78px;
+  margin-bottom: 40px;
+}
+
+.notice > p {
+  font-size: 18px;
+  color: #c7c7c7;
+}
+
+.notice > p > span {
+  color: #fac87c;
+  font-weight: 700;
+}
+
+.notice > p:nth-child(2) {
+  margin-bottom: 10px;
+}
+
 .cards {
   border: 2px solid #ececec;
   border-radius: 10px;
