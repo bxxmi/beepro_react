@@ -35,8 +35,9 @@ const Home = ({ authService }) => {
     setCard(updated);
   };
 
-  const deleteCard = () => {
-    console.log("delete");
+  const deleteCard = (id) => {
+    const cards = card.filter((item) => item.projectId !== id);
+    setCard(cards);
   };
 
   return (

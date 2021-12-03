@@ -8,7 +8,9 @@ const CardList = ({ card, onDelete }) => {
       {card ? (
         card.map((card) => {
           return (
-            <CardItem card={card} key={card.projectId} onDelete={onDelete} />
+            <div key={card.projectId}>
+              <CardItem card={card} onDelete={onDelete} />
+            </div>
           );
         })
       ) : (

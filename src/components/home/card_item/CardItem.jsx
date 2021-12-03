@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import styles from "./card_item.module.css";
-import Buttons from "../button/Buttons";
+import DeleteButton from "../button/DeleteButton";
+import EditButton from "../button/EditButton";
 
 const DEFAULT_IMAGE = "/ghost-icon.jpg";
 
@@ -33,8 +34,9 @@ const CardItem = ({ card, onDelete }) => {
           <p className={styles.description}>{description}</p>
           <p className={styles.startDate}>{startDate}</p>
           <p className={styles.dueDate}>{dueDate}</p>
+          <EditButton />
+          <DeleteButton id={projectId} onDelete={onDelete} />
         </div>
-        <Buttons card={card} onDelete={onDelete} />
       </li>
     </ul>
   );
