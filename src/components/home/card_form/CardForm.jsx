@@ -1,7 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./card_form.module.css";
 
 const CardForm = ({ onAdd }) => {
+  const [show, setShow] = useState(false);
+
   const formRef = useRef();
   const nameRef = useRef();
   const roleRef = useRef();
@@ -34,79 +36,111 @@ const CardForm = ({ onAdd }) => {
     onAdd(card);
   };
 
+  const showHideForm = () => {
+    setShow((show) => !show);
+  };
+
   return (
-    <form ref={formRef} className={styles.form}>
-      <input
-        ref={nameRef}
-        type="text"
-        name="projectName"
-        placeholder="Project Name"
-      />
-      <input ref={roleRef} type="text" name="projectRole" placeholder="Role" />
-      <input
-        ref={descriptionRef}
-        type="text"
-        name="description"
-        placeholder="Description"
-      />
-      <input
-        ref={startRef}
-        type="date"
-        name="startDate"
-        placeholder="Start Date"
-      />
-      <input ref={dueRef} type="date" name="dueDate" placeholder="Due Date" />
-      <input
-        ref={colorRef}
-        type="radio"
-        name="color"
-        value="basic"
-        onChange={handleRadio}
-      />
-      Basic
-      <input
-        ref={colorRef}
-        type="radio"
-        name="color"
-        value="red"
-        onChange={handleRadio}
-      />
-      Red
-      <input
-        ref={colorRef}
-        type="radio"
-        name="color"
-        value="yellow"
-        onChange={handleRadio}
-      />
-      Yellow
-      <input
-        ref={colorRef}
-        type="radio"
-        name="color"
-        value="green"
-        onChange={handleRadio}
-      />
-      Green
-      <input
-        ref={colorRef}
-        type="radio"
-        name="color"
-        value="blue"
-        onChange={handleRadio}
-      />
-      Blue
-      <input
-        ref={colorRef}
-        type="radio"
-        name="color"
-        value="purple"
-        onChange={handleRadio}
-      />
-      Purple
-      <input type="text" placeholder="image" />
-      <button onClick={onSubmit}>등록</button>
-    </form>
+    <>
+      <button className={styles.toggle_button} onClick={showHideForm}>
+        <i className="fas fa-plus-circle"></i>
+      </button>
+      <form
+        ref={formRef}
+        className={show ? styles.form_show : styles.form_hide}
+      >
+        <div className={styles.info_1}>
+          <input
+            ref={nameRef}
+            type="text"
+            name="projectName"
+            placeholder="Project Name"
+          />
+          <input type="text" placeholder="image" />
+        </div>
+        <div className={styles.info_2}>
+          <input
+            ref={startRef}
+            type="date"
+            name="startDate"
+            placeholder="Start Date"
+          />
+          <input
+            ref={dueRef}
+            type="date"
+            name="dueDate"
+            placeholder="Due Date"
+          />
+          <input
+            ref={roleRef}
+            type="text"
+            name="projectRole"
+            placeholder="Role"
+          />
+        </div>
+        <div className={styles.info_3}>
+          <input
+            ref={descriptionRef}
+            type="text"
+            name="description"
+            placeholder="Description"
+          />
+        </div>
+        <div className={styles.info_4}>
+          <input
+            ref={colorRef}
+            type="radio"
+            name="color"
+            value="basic"
+            onChange={handleRadio}
+          />
+          Basic
+          <input
+            ref={colorRef}
+            type="radio"
+            name="color"
+            value="red"
+            onChange={handleRadio}
+          />
+          Red
+          <input
+            ref={colorRef}
+            type="radio"
+            name="color"
+            value="yellow"
+            onChange={handleRadio}
+          />
+          Yellow
+          <input
+            ref={colorRef}
+            type="radio"
+            name="color"
+            value="green"
+            onChange={handleRadio}
+          />
+          Green
+          <input
+            ref={colorRef}
+            type="radio"
+            name="color"
+            value="blue"
+            onChange={handleRadio}
+          />
+          Blue
+          <input
+            ref={colorRef}
+            type="radio"
+            name="color"
+            value="purple"
+            onChange={handleRadio}
+          />
+          Purple
+        </div>
+        <div className={styles.form_submit}>
+          <button onClick={onSubmit}>등 록</button>
+        </div>
+      </form>
+    </>
   );
 };
 

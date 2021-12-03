@@ -57,13 +57,13 @@
   line-height: 60px;
 }
 
-button {
+.logout {
   background-color: transparent;
   border: none;
   cursor: pointer;
   margin-left: 40px;
 }
 
-button > i {
+.logout > i {
   margin-right: 5px;
 }

@@ -40,8 +40,12 @@ const Home = ({ authService, cardData }) => {
         <Navigation authService={authService} />
       </div>
       <div className={styles.card_area}>
-        <CardForm onAdd={addCard} />
-        <CardList card={card} onDelete={deleteCard} />
+        <div className={styles.card_form}>
+          <CardForm onAdd={addCard} />
+        </div>
+        <div className={styles.card_list}>
+          <CardList card={card} onDelete={deleteCard} />
+        </div>
       </div>
     </div>
   );

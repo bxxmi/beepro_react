@@ -46,7 +46,7 @@ const Navigation = ({ authService }) => {
           <p>프로젝트 카드</p>
         </div>
       </div>
-      <button onClick={onLogout}>
+      <button onClick={onLogout} className={styles.logout}>
         <i className="fas fa-sign-out-alt"></i>
         Logout
       </button>

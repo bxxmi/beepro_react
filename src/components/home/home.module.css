@@ -14,3 +14,8 @@
   width: 100%;
   padding: 12px;
 }
+
+.card_area .card_form {
+  width: 100%;
+  position: relative;
+}
