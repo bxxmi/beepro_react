@@ -13,10 +13,12 @@ class AuthService {
   }
 
   getServiceProvider(providerName) {
-    switch (providerName) {
-      case "Google":
+    const socialName = providerName.substr(11, 17);
+
+    switch (socialName) {
+      case "GOOGLE":
         return this.googleProvider;
-      case "Github":
+      case "GITHUB":
         return this.githubProvider;
       default:
         console.log(`${providerName}는 로그인 서비스를 제공하지 않습니다.`);
