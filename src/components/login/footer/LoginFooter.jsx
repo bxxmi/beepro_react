@@ -1,9 +1,11 @@
-import React from 'react';
-
+import React from "react";
+import styles from "./login_footer.module.css";
 const LoginFooter = () => {
   return (
-    <div>
-      footer
+    <div className={styles.login_footer}>
+      <p>
+        Developed by <strong>@bxxmi</strong>
+      </p>
     </div>
   );
 };

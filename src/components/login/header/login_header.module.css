@@ -1,0 +1,24 @@
+.login_header {
+  margin-bottom: 60px;
+}
+
+.login_header > p {
+  font-size: 36px;
+  font-weight: 700;
+  color: #321b18;
+  margin-bottom: 85px;
+}
+
+.login_header > img {
+  width: 150px;
+  animation: up-down 1.4s infinite ease-in-out alternate;
+}
+
+@keyframes up-down {
+  from {
+    transform: translatey(0px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}

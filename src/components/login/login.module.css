@@ -1,0 +1,61 @@
+.login_area {
+  height: 100vh;
+  background-color: #fdeed7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  width: 330px;
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.google > img {
+  width: 20px;
+  margin-right: 25px;
+}
+
+.google {
+  height: 45px;
+  font-size: 13px;
+  color: white;
+  letter-spacing: 1.2px;
+  background-color: #fac87c;
+  border-radius: 30px;
+  border: none;
+  margin-bottom: 25px;
+  cursor: pointer;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+}
+
+.github > img {
+  width: 20px;
+  margin-right: 25px;
+}
+
+.github {
+  height: 45px;
+  font-size: 13px;
+  color: white;
+  letter-spacing: 1.2px;
+  background-color: #321b18;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+}

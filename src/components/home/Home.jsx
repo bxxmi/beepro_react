@@ -6,7 +6,7 @@ import styles from "./home.module.css";
 import { useLocation } from "react-router";
 
 const Home = ({ authService, cardData }) => {
-  const locationState = JSON.parse(useLocation().state).user.uid;
+  const locationState = JSON.parse(useLocation().state);
   const [card, setCard] = useState({});
   const [userId, setUserId] = useState(locationState);
 
