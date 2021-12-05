@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import styles from "./card_item.module.css";
 import DeleteButton from "../button/DeleteButton";
-import EditButton from "../button/EditButton";
 
 const DEFAULT_IMAGE = "/ghost-icon.jpg";
 
@@ -90,7 +89,6 @@ const CardItem = ({ card, onDelete, onEdit }) => {
             />
           </div>
           <div className={styles.info_buttons}>
-            <EditButton card={card} onEdit={onEdit} />
             <DeleteButton id={projectId} onDelete={onDelete} />
           </div>
         </div>

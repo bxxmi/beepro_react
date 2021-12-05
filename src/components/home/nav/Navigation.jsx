@@ -18,7 +18,7 @@ const Navigation = ({ authService }) => {
   useEffect(() => {
     authService.onAuthChange((user) => {
       if (!user) {
-        navigate("/login");
+        navigate("/");
       } else {
         setUser({
           id: user.uid,

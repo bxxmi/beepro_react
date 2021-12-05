@@ -31,14 +31,16 @@
 .card .info .info_title {
   display: flex;
   align-items: center;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 10px 0;
+  margin-bottom: 15px;
 }
 
-.card .info .info_title > span {
-  font-size: 13px;
-  margin-right: 20px;
-  color: #333333;
+.card .info .info_title > input {
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 .card .info .info_role {
@@ -51,6 +53,12 @@
   color: #333333;
 }
 
+.card .info .info_role > input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
 .card .info .info_description {
   margin-bottom: 20px;
 }
@@ -59,6 +67,12 @@
   font-size: 13px;
   margin-right: 20px;
   color: #333333;
+}
+
+.card .info .info_description > input {
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 .card .info .info_startDate {
@@ -71,10 +85,22 @@
   color: #333333;
 }
 
+.card .info .info_startDate > input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
 .card .info .info_dueDate > span {
   font-size: 13px;
   margin-right: 20px;
   color: #333333;
+}
+
+.card .info .info_dueDate > input {
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 .card .info .info_buttons {

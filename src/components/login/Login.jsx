@@ -14,7 +14,7 @@ const Login = ({ authService }) => {
   };
 
   const goHome = (userInfo) => {
-    navigate("/", {
+    navigate("/main", {
       state: userInfo,
     });
   };

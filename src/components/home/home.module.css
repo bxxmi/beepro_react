@@ -9,10 +9,10 @@
 }
 
 .card_area {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   padding: 12px;
+  display: flex;
+  flex-direction: column;
   background-color: #fefcf9;
 }
 

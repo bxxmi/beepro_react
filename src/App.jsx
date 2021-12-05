@@ -7,12 +7,12 @@ function App({ authService, cardData }) {
     <div className="App">
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Login authService={authService} />} />
           <Route
-            path="/"
+            path="/main"
             element={<Home authService={authService} cardData={cardData} />}
             exact
           />
-          <Route path="/login" element={<Login authService={authService} />} />
         </Routes>
       </BrowserRouter>
     </div>

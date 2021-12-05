@@ -9,12 +9,14 @@
 }
 
 .form_show {
-  width: 100%;
+  padding: 30px 35px;
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 60px;
+  background-color: rgba(253, 247, 238, 0.3);
   backdrop-filter: blur(4px);
+  border-radius: 10px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   z-index: 999;
 }
