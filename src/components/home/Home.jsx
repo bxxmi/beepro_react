@@ -17,6 +17,13 @@ const Home = ({ authService, cardData }) => {
     cardData.saveCard(userId, content);
   };
 
+  const editCard = (content) => {
+    const updated = { ...card, content };
+    updated[content.projectId] = content;
+    setCard(updated);
+    cardData.saveCard(userId, content);
+  };
+
   const deleteCard = (id) => {
     const updated = { ...card };
     delete updated[id];
@@ -44,7 +51,7 @@ const Home = ({ authService, cardData }) => {
           <CardForm onAdd={addCard} />
         </div>
         <div className={styles.card_list}>
-          <CardList card={card} onDelete={deleteCard} />
+          <CardList card={card} onDelete={deleteCard} onEdit={editCard} />
         </div>
       </div>
     </div>

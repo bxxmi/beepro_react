@@ -5,8 +5,12 @@ import EditButton from "../button/EditButton";
 
 const DEFAULT_IMAGE = "/ghost-icon.jpg";
 
-const CardItem = ({ card, onDelete }) => {
-  const cardRef = useRef();
+const CardItem = ({ card, onDelete, onEdit }) => {
+  const titleRef = useRef();
+  const roleRef = useRef();
+  const descriptionRef = useRef();
+  const startDateRef = useRef();
+  const dueDateRef = useRef();
 
   const {
     projectId,
@@ -22,34 +26,71 @@ const CardItem = ({ card, onDelete }) => {
 
   const url = fileURL || DEFAULT_IMAGE;
 
+  const onChange = (event) => {
+    onEdit({
+      ...card,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
+  };
+
   return (
     <ul>
-      <li ref={cardRef} className={`${styles.card} ${pickColor(color)}`}>
+      <li className={`${styles.card} ${pickColor(color)}`}>
         <div className={styles.photo}>
           <img src={url} alt="profile image" />
         </div>
         <div className={styles.info}>
           <div className={styles.info_title}>
-            <h2>{projectName}</h2>
+            <input
+              type="text"
+              name="projectName"
+              ref={titleRef}
+              defaultValue={projectName}
+              onChange={onChange}
+            />
           </div>
           <div className={styles.info_role}>
             <span>역할</span>
-            {projectRole}
+            <input
+              type="text"
+              name="projectRole"
+              ref={roleRef}
+              defaultValue={projectRole}
+              onChange={onChange}
+            />
           </div>
           <div className={styles.info_description}>
             <span>프로젝트 상세</span>
-            {description}
+            <input
+              type="text"
+              name="description"
+              ref={descriptionRef}
+              defaultValue={description}
+              onChange={onChange}
+            />
           </div>
           <div className={styles.info_startDate}>
             <span>시작일</span>
-            {startDate}
+            <input
+              type="date"
+              name="startDate"
+              ref={startDateRef}
+              defaultValue={startDate}
+              onChange={onChange}
+            />
           </div>
           <div className={styles.info_dueDate}>
             <span>마감일</span>
-            {dueDate}
+            <input
+              type="date"
+              name="dueDate"
+              ref={dueDateRef}
+              defaultValue={dueDate}
+              onChange={onChange}
+            />
           </div>
           <div className={styles.info_buttons}>
-            <EditButton />
+            <EditButton card={card} onEdit={onEdit} />
             <DeleteButton id={projectId} onDelete={onDelete} />
           </div>
         </div>

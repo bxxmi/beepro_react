@@ -2,14 +2,14 @@ import React from "react";
 import CardItem from "../card_item/CardItem";
 import styles from "./card_list.module.css";
 
-const CardList = ({ card, onDelete }) => {
+const CardList = ({ card, onDelete, onEdit }) => {
   return (
     <div className={styles.no_cards}>
       {Object.keys(card).length !== 0 ? (
         Object.keys(card).map((key) => {
           return (
             <div className={styles.cards} key={key}>
-              <CardItem card={card[key]} onDelete={onDelete} />
+              <CardItem card={card[key]} onDelete={onDelete} onEdit={onEdit} />
             </div>
           );
         })
