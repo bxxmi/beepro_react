@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 import styles from "./card_form.module.css";
 
-const CardForm = ({ onAdd }) => {
+const CardForm = ({ FileInput, onAdd }) => {
+  const [file, setFile] = useState({ fileName: null, fileURL: null });
   const [show, setShow] = useState(false);
 
   const formRef = useRef();
@@ -28,8 +29,8 @@ const CardForm = ({ onAdd }) => {
       startDate: startRef.current.value || "No Date",
       dueDate: dueRef.current.value || "No Date",
       color: colorRef.current,
-      fileName: "",
-      fileURL: "",
+      fileName: file.fileName || "",
+      fileURL: file.fileURL || "",
     };
 
     formRef.current.reset();
@@ -39,6 +40,13 @@ const CardForm = ({ onAdd }) => {
 
   const showHideForm = () => {
     setShow((show) => !show);
+  };
+
+  const onFileChange = (file) => {
+    setFile({
+      fileName: file.name,
+      fileURL: file.url,
+    });
   };
 
   return (
@@ -57,7 +65,7 @@ const CardForm = ({ onAdd }) => {
             name="projectName"
             placeholder="Project Name"
           />
-          <input type="text" placeholder="image" />
+          <FileInput onFileChange={onFileChange} />
         </div>
         <div className={styles.info_2}>
           <input

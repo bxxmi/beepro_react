@@ -2,7 +2,7 @@ import Login from "./components/login/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 
-function App({ authService, cardData }) {
+function App({ FileInput, authService, cardData }) {
   return (
     <div className="App">
       <BrowserRouter>
@@ -10,7 +10,13 @@ function App({ authService, cardData }) {
           <Route path="/" element={<Login authService={authService} />} />
           <Route
             path="/main"
-            element={<Home authService={authService} cardData={cardData} />}
+            element={
+              <Home
+                FileInput={FileInput}
+                authService={authService}
+                cardData={cardData}
+              />
+            }
             exact
           />
         </Routes>

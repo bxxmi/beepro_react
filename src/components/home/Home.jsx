@@ -5,8 +5,8 @@ import CardList from "./card_list/CardList";
 import styles from "./home.module.css";
 import { useLocation } from "react-router";
 
-const Home = ({ authService, cardData }) => {
-  const locationState = JSON.parse(useLocation().state).user.uid;
+const Home = ({ FileInput, authService, cardData }) => {
+  const locationState = JSON.parse(useLocation().state);
   const [card, setCard] = useState({});
   const [userId, setUserId] = useState(locationState);
 
@@ -48,7 +48,7 @@ const Home = ({ authService, cardData }) => {
       </div>
       <div className={styles.card_area}>
         <div className={styles.card_form}>
-          <CardForm onAdd={addCard} />
+          <CardForm onAdd={addCard} FileInput={FileInput} />
         </div>
         <div className={styles.card_list}>
           <CardList card={card} onDelete={deleteCard} onEdit={editCard} />
