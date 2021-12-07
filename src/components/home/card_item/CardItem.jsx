@@ -5,7 +5,6 @@ import DeleteButton from "../button/DeleteButton";
 const DEFAULT_IMAGE = "/ghost-icon.jpg";
 
 const CardItem = ({ card, onDelete, onEdit, FileInput }) => {
-  const inputRef = useRef();
   const titleRef = useRef();
   const roleRef = useRef();
   const descriptionRef = useRef();
@@ -97,11 +96,7 @@ const CardItem = ({ card, onDelete, onEdit, FileInput }) => {
               onChange={onChange}
             />
           </div>
-          <FileInput
-            ref={inputRef}
-            onChange={onChange}
-            onFileChange={onFileChange}
-          />
+          <FileInput onChange={onChange} onFileChange={onFileChange} />
           <div className={styles.info_buttons}>
             <DeleteButton id={projectId} onDelete={onDelete} />
           </div>
