@@ -8,18 +8,17 @@
 }
 
 .card .photo {
-  width: 130px;
-  padding: 10px;
-  margin-right: 10px;
+  padding: 13px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .card .photo > img {
   width: 90px;
+  height: 90px;
   background-color: white;
-  border-radius: 100%;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .card .info {
@@ -32,7 +31,7 @@
   display: flex;
   align-items: center;
   padding: 10px 0;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .card .info .info_title > input {
@@ -60,7 +59,7 @@
 }
 
 .card .info .info_description {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .card .info .info_description > span {
@@ -89,6 +88,10 @@
   border: none;
   outline: none;
   background-color: transparent;
+}
+
+.card .info .info_dueDate {
+  margin-bottom: 10px;
 }
 
 .card .info .info_dueDate > span {

@@ -5,6 +5,7 @@ import DeleteButton from "../button/DeleteButton";
 const DEFAULT_IMAGE = "/ghost-icon.jpg";
 
 const CardItem = ({ card, onDelete, onEdit, FileInput }) => {
+  const inputRef = useRef();
   const titleRef = useRef();
   const roleRef = useRef();
   const descriptionRef = useRef();
@@ -44,15 +45,7 @@ const CardItem = ({ card, onDelete, onEdit, FileInput }) => {
     <ul>
       <li className={`${styles.card} ${pickColor(color)}`}>
         <div className={styles.photo}>
-          <label>
-            <img src={url} alt="profile image" />
-          </label>
-
-          <FileInput
-            onChange={onChange}
-            onFileChange={onFileChange}
-            styles="display: none"
-          />
+          <img src={url} alt="profile image" />
         </div>
         <div className={styles.info}>
           <div className={styles.info_title}>
@@ -104,6 +97,11 @@ const CardItem = ({ card, onDelete, onEdit, FileInput }) => {
               onChange={onChange}
             />
           </div>
+          <FileInput
+            ref={inputRef}
+            onChange={onChange}
+            onFileChange={onFileChange}
+          />
           <div className={styles.info_buttons}>
             <DeleteButton id={projectId} onDelete={onDelete} />
           </div>
