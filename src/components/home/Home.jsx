@@ -4,11 +4,13 @@ import CardForm from "./card_form/CardForm";
 import CardList from "./card_list/CardList";
 import styles from "./home.module.css";
 import { useLocation } from "react-router";
+import LoadingSpinner from "./loading/LoadingSpinner";
 
 const Home = ({ FileInput, authService, cardData }) => {
   const locationState = JSON.parse(useLocation().state).user.uid;
   const [card, setCard] = useState({});
   const [userId, setUserId] = useState(locationState);
+  const [loading, setLoading] = useState(true);
 
   const addCard = (content) => {
     const updated = { ...card };
@@ -37,6 +39,7 @@ const Home = ({ FileInput, authService, cardData }) => {
     }
     const stopSync = cardData.syncCards(userId, (card) => {
       setCard(card);
+      setLoading(false);
     });
     return () => stopSync();
   }, [userId]);
@@ -50,14 +53,18 @@ const Home = ({ FileInput, authService, cardData }) => {
         <div className={styles.card_form}>
           <CardForm onAdd={addCard} FileInput={FileInput} />
         </div>
-        <div className={styles.card_list}>
-          <CardList
-            card={card}
-            onDelete={deleteCard}
-            onEdit={editCard}
-            FileInput={FileInput}
-          />
-        </div>
+        {loading ? (
+          <LoadingSpinner />
+        ) : (
+          <div className={styles.card_list}>
+            <CardList
+              card={card}
+              onDelete={deleteCard}
+              onEdit={editCard}
+              FileInput={FileInput}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
