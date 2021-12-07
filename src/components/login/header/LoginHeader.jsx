@@ -7,7 +7,7 @@ const LoginHeader = () => {
   return (
     <div className={styles.login_header}>
       <p>Beepro</p>
-      <img src={HEADER_IMAGE} alt="header image" />
+      <img src={HEADER_IMAGE} alt="header" />
     </div>
   );
 };

@@ -34,6 +34,7 @@ const Home = ({ FileInput, authService, cardData }) => {
   };
 
   useEffect(() => {
+    setUserId(userId);
     if (!userId) {
       return;
     }
@@ -42,7 +43,7 @@ const Home = ({ FileInput, authService, cardData }) => {
       setLoading(false);
     });
     return () => stopSync();
-  }, [userId]);
+  }, [userId, cardData]);
 
   return (
     <div className={styles.container}>

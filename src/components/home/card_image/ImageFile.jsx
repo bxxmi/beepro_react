@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from "react";
+import React from "react";
 import styles from "./image_file.module.css";
 
 const ImageFile = ({ uploadImage, onFileChange }) => {

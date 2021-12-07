@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CardItem from "../card_item/CardItem";
 import styles from "./card_list.module.css";
 

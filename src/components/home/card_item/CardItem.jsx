@@ -19,7 +19,6 @@ const CardItem = ({ card, onDelete, onEdit, FileInput }) => {
     startDate,
     dueDate,
     color,
-    fileName,
     fileURL,
   } = card;
 
@@ -43,7 +42,7 @@ const CardItem = ({ card, onDelete, onEdit, FileInput }) => {
   return (
     <li className={`${styles.card} ${pickColor(color)}`}>
       <div className={styles.photo}>
-        <img src={url} alt="profile image" />
+        <img src={url} alt="profile" />
       </div>
       <div className={styles.info}>
         <div className={styles.info_title}>
