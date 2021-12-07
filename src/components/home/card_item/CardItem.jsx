@@ -41,68 +41,66 @@ const CardItem = ({ card, onDelete, onEdit, FileInput }) => {
   };
 
   return (
-    <ul>
-      <li className={`${styles.card} ${pickColor(color)}`}>
-        <div className={styles.photo}>
-          <img src={url} alt="profile image" />
+    <li className={`${styles.card} ${pickColor(color)}`}>
+      <div className={styles.photo}>
+        <img src={url} alt="profile image" />
+      </div>
+      <div className={styles.info}>
+        <div className={styles.info_title}>
+          <input
+            type="text"
+            name="projectName"
+            ref={titleRef}
+            defaultValue={projectName}
+            onChange={onChange}
+          />
         </div>
-        <div className={styles.info}>
-          <div className={styles.info_title}>
-            <input
-              type="text"
-              name="projectName"
-              ref={titleRef}
-              defaultValue={projectName}
-              onChange={onChange}
-            />
-          </div>
-          <div className={styles.info_role}>
-            <span>역할</span>
-            <input
-              type="text"
-              name="projectRole"
-              ref={roleRef}
-              defaultValue={projectRole}
-              onChange={onChange}
-            />
-          </div>
-          <div className={styles.info_description}>
-            <span>프로젝트 상세</span>
-            <input
-              type="text"
-              name="description"
-              ref={descriptionRef}
-              defaultValue={description}
-              onChange={onChange}
-            />
-          </div>
-          <div className={styles.info_startDate}>
-            <span>시작일</span>
-            <input
-              type="date"
-              name="startDate"
-              ref={startDateRef}
-              defaultValue={startDate}
-              onChange={onChange}
-            />
-          </div>
-          <div className={styles.info_dueDate}>
-            <span>마감일</span>
-            <input
-              type="date"
-              name="dueDate"
-              ref={dueDateRef}
-              defaultValue={dueDate}
-              onChange={onChange}
-            />
-          </div>
-          <FileInput onChange={onChange} onFileChange={onFileChange} />
-          <div className={styles.info_buttons}>
-            <DeleteButton id={projectId} onDelete={onDelete} />
-          </div>
+        <div className={styles.info_role}>
+          <span>역할</span>
+          <input
+            type="text"
+            name="projectRole"
+            ref={roleRef}
+            defaultValue={projectRole}
+            onChange={onChange}
+          />
         </div>
-      </li>
-    </ul>
+        <div className={styles.info_description}>
+          <span>프로젝트 상세</span>
+          <input
+            type="text"
+            name="description"
+            ref={descriptionRef}
+            defaultValue={description}
+            onChange={onChange}
+          />
+        </div>
+        <div className={styles.info_startDate}>
+          <span>시작일</span>
+          <input
+            type="date"
+            name="startDate"
+            ref={startDateRef}
+            defaultValue={startDate}
+            onChange={onChange}
+          />
+        </div>
+        <div className={styles.info_dueDate}>
+          <span>마감일</span>
+          <input
+            type="date"
+            name="dueDate"
+            ref={dueDateRef}
+            defaultValue={dueDate}
+            onChange={onChange}
+          />
+        </div>
+        <FileInput onChange={onChange} onFileChange={onFileChange} />
+        <div className={styles.info_buttons}>
+          <DeleteButton id={projectId} onDelete={onDelete} />
+        </div>
+      </div>
+    </li>
   );
 };
 

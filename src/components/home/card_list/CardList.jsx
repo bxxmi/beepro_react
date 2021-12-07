@@ -8,14 +8,14 @@ const CardList = ({ card, onDelete, onEdit, FileInput }) => {
       {Object.keys(card).length !== 0 ? (
         Object.keys(card).map((key) => {
           return (
-            <div className={styles.cards} key={key}>
+            <ul className={styles.cards} key={key}>
               <CardItem
                 card={card[key]}
                 onDelete={onDelete}
                 onEdit={onEdit}
                 FileInput={FileInput}
               />
-            </div>
+            </ul>
           );
         })
       ) : (

@@ -6,6 +6,11 @@
   border: none;
   cursor: pointer;
   margin-bottom: 40px;
+  transition: all 0.3s;
+}
+
+.toggle_button:hover {
+  transform: rotateZ(-50deg);
 }
 
 .form_show {
