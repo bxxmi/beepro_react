@@ -2,7 +2,7 @@
 
 진행 중인 <b>프로젝트 정보를 관리</b>할 수 있는 웹 애플리케이션입니다.
 
-> 🔗 DEMO Site : 
+> 🔗 DEMO Site : https://beepro-react.netlify.app/
 
 <img src="./readme/login.gif" width="100%" alt="main">
 
@@ -56,3 +56,12 @@
       </details>
 
 <br />
+
+### 실행 방법
+
+* clone 후 yarn/yarn start
+
+```
+$ yarn 
+$ yarn start
+```
