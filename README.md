@@ -56,9 +56,3 @@
       </details>
 
 <br />
-
-### 🔖 Docs
-
-* 프로젝트 상세 진행 상황(기능 추가 및 fix 등)은 아래 링크에서 볼 수 있습니다.
-  
-[Beepro 노션 보러가기](https://unequaled-yuzu-fab.notion.site/Beepro-ae0ca9044ba546d08a62924d5cd95347)
