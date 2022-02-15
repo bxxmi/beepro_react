@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./image_file.module.css";
 
-const ImageFile = ({ uploadImage, onFileChange }) => {
+const ImageFile = memo(({ uploadImage, onFileChange }) => {
   const onChange = async (event) => {
     const upload = await uploadImage.upload(event.target.files[0]);
     onFileChange({
@@ -15,6 +15,6 @@ const ImageFile = ({ uploadImage, onFileChange }) => {
       <input type="file" accept="image/*" name="file" onChange={onChange} />
     </div>
   );
-};
+});
 
 export default ImageFile;

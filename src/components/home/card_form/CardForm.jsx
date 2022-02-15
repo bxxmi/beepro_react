@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { memo, useRef, useState } from "react";
 import styles from "./card_form.module.css";
 
-const CardForm = ({ FileInput, onAdd }) => {
+const CardForm = memo(({ FileInput, onAdd }) => {
   const [file, setFile] = useState({ fileName: null, fileURL: null });
   const [show, setShow] = useState(false);
 
@@ -22,7 +22,7 @@ const CardForm = ({ FileInput, onAdd }) => {
     event.preventDefault();
 
     const card = {
-      projectId: Date.now(), //uuid 사용하기
+      projectId: Date.now(),
       projectName: nameRef.current.value || "No Title",
       projectRole: roleRef.current.value || "No Role",
       description: descriptionRef.current.value || "No Description",
@@ -157,6 +157,6 @@ const CardForm = ({ FileInput, onAdd }) => {
       </form>
     </>
   );
-};
+});
 
 export default CardForm;

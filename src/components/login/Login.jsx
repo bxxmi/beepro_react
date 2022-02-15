@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import LoginHeader from "./header/LoginHeader";
 import LoginFooter from "./footer/LoginFooter";
-import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ authService }) => {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ const Login = ({ authService }) => {
   const onLogin = (event) => {
     authService
       .login(event.currentTarget.textContent)
-      .then((response) => goHome(JSON.stringify(response)));
+      .then((response) => goHome(JSON.stringify(response.user.uid)));
   };
 
   const goHome = (userInfo) => {
@@ -18,12 +18,6 @@ const Login = ({ authService }) => {
       state: userInfo,
     });
   };
-
-  useEffect(() => {
-    authService.onAuthChange((user) => {
-      user && goHome(user);
-    });
-  });
 
   return (
     <div className={styles.login_area}>

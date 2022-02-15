@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import styles from "./navigation.module.css";
 
-const Navigation = ({ authService }) => {
+const Navigation = memo(({ authService }) => {
   const [user, setUser] = useState({
     id: "",
     name: "",
@@ -11,9 +11,9 @@ const Navigation = ({ authService }) => {
 
   const navigate = useNavigate();
 
-  const onLogout = () => {
+  const onLogout = useCallback(() => {
     authService.logout();
-  };
+  }, [authService]);
 
   useEffect(() => {
     authService.onAuthChange((user) => {
@@ -52,6 +52,6 @@ const Navigation = ({ authService }) => {
       </button>
     </div>
   );
-};
+});
 
 export default Navigation;

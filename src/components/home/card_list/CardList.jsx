@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import CardItem from "../card_item/CardItem";
 import styles from "./card_list.module.css";
 
-const CardList = ({ card, onDelete, onEdit, FileInput }) => {
+const CardList = memo(({ card, onDelete, onEdit, FileInput }) => {
   return (
     <div className={styles.no_cards}>
       {Object.keys(card).length !== 0 ? (
@@ -29,6 +29,6 @@ const CardList = ({ card, onDelete, onEdit, FileInput }) => {
       )}
     </div>
   );
-};
+});
 
 export default CardList;

@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import React, { memo, useRef } from "react";
 import styles from "./card_item.module.css";
 import DeleteButton from "../button/DeleteButton";
 
 const DEFAULT_IMAGE = "/ghost-icon.jpg";
 
-const CardItem = ({ card, onDelete, onEdit, FileInput }) => {
+const CardItem = memo(({ card, onDelete, onEdit, FileInput }) => {
   const titleRef = useRef();
   const roleRef = useRef();
   const descriptionRef = useRef();
@@ -101,7 +101,7 @@ const CardItem = ({ card, onDelete, onEdit, FileInput }) => {
       </div>
     </li>
   );
-};
+});
 
 function pickColor(color) {
   switch (color) {

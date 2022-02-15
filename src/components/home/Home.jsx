@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import Navigation from "./nav/Navigation";
 import CardForm from "./card_form/CardForm";
 import CardList from "./card_list/CardList";
@@ -6,8 +6,8 @@ import styles from "./home.module.css";
 import { useLocation } from "react-router";
 import LoadingSpinner from "./loading/LoadingSpinner";
 
-const Home = ({ FileInput, authService, cardData }) => {
-  const locationState = JSON.parse(useLocation().state).user.uid;
+const Home = memo(({ FileInput, authService, cardData }) => {
+  const locationState = JSON.parse(useLocation().state);
   const [card, setCard] = useState({});
   const [userId, setUserId] = useState(locationState);
   const [loading, setLoading] = useState(true);
@@ -35,13 +35,14 @@ const Home = ({ FileInput, authService, cardData }) => {
 
   useEffect(() => {
     setUserId(userId);
-    if (!userId) {
-      return;
-    }
+
     const stopSync = cardData.syncCards(userId, (card) => {
+      console.log(card);
       setCard(card);
-      setLoading(false);
     });
+
+    setLoading(false);
+
     return () => stopSync();
   }, [userId, cardData]);
 
@@ -69,6 +70,6 @@ const Home = ({ FileInput, authService, cardData }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Home;
